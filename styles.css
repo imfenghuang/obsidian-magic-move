@@ -1,0 +1,105 @@
+.obsidian-magic-move-wrap .shiki-magic-move-container {
+	position: relative;
+	white-space: pre;
+}
+
+.obsidian-magic-move-wrap .shiki-magic-move-line-number {
+	opacity: 0.3;
+	user-select: none;
+}
+
+.obsidian-magic-move-wrap .shiki-magic-move-item {
+	display: inline-block;
+	transition: color var(--smm-duration, 0.5s) var(--smm-easing, 'ease');
+}
+
+.obsidian-magic-move-wrap .shiki-magic-move-move {
+	transition: all var(--smm-duration, 0.5s) var(--smm-easing, 'ease');
+}
+
+.obsidian-magic-move-wrap .shiki-magic-move-enter-active,
+.obsidian-magic-move-wrap .shiki-magic-move-leave-active {
+	transition: all var(--smm-duration, 0.5s) var(--smm-easing, 'ease');
+}
+
+.obsidian-magic-move-wrap .shiki-magic-move-container-resize,
+.obsidian-magic-move-wrap .shiki-magic-move-container-restyle {
+	transition: all var(--smm-duration, 0.5s) var(--smm-easing, 'ease');
+	transition-delay: calc(
+		var(--smm-duration, 0.5s) * var(--smm-delay-container, 1)
+	);
+}
+
+.obsidian-magic-move-wrap .shiki-magic-move-move {
+	transition-delay: calc(
+		calc(var(--smm-duration, 0.5s) * var(--smm-delay-move, 1)) +
+			var(--smm-stagger, 0)
+	);
+	z-index: 1;
+}
+
+.obsidian-magic-move-wrap .shiki-magic-move-enter-active {
+	transition-delay: calc(
+		calc(var(--smm-duration, 0.5s) * var(--smm-delay-enter, 1)) +
+			var(--smm-stagger, 0)
+	);
+	z-index: 1;
+}
+
+.obsidian-magic-move-wrap .shiki-magic-move-leave-active {
+	transition-delay: calc(
+		calc(var(--smm-duration, 0.5s) * var(--smm-delay-leave, 1)) +
+			var(--smm-stagger, 0)
+	);
+}
+
+.obsidian-magic-move-wrap .shiki-magic-move-enter-from,
+.obsidian-magic-move-wrap .shiki-magic-move-leave-to {
+	opacity: 0;
+}
+
+.obsidian-magic-move-wrap br.shiki-magic-move-leave-active {
+	display: none;
+}
+
+.obsidian-magic-move-wrap .obsidian-magic-move-navigation-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+.obsidian-magic-move-wrap .obsidian-magic-move-navigation-prev,
+.obsidian-magic-move-wrap .obsidian-magic-move-navigation-next {
+	cursor: pointer;
+}
+.obsidian-magic-move-wrap .obsidian-magic-move-navigation-prev[disabled],
+.obsidian-magic-move-wrap .obsidian-magic-move-navigation-next[disabled] {
+	cursor: not-allowed;
+}
+
+/* hidden class */
+.language-magic-move {
+	display: block !important;
+	padding: 0 !important;
+	min-height: 0 !important;
+	height: 1px !important;
+	transform: scaleY(0.5) !important;
+	opacity: 0 !important;
+	overflow: hidden !important;
+	pointer-events: none !important;
+}
+
+.obsidian-magic-move-hidden .obsidian-magic-move-temp {
+	padding: 0 !important;
+	opacity: 0 !important;
+	height: 1px !important;
+	transform: scaleY(0.5) !important;
+	pointer-events: none !important;
+}
+
+/* override reset */
+.markdown-reading-view
+	.obsidian-magic-move-wrap
+	pre.shiki-magic-move-container {
+	padding: var(--size-4-3) var(--size-4-4) !important;
+}

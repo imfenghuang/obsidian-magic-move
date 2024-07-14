@@ -35,6 +35,12 @@ const double = computed(() => count.value * 2)
 ````
 </pre>
 
+## Options
+
+You can set the `duration`, `stagger`, `lineNumbers` animation option and select any theme you like in the settings tab. All settings are effective immediately.
+
+![settings](https://github.com/user-attachments/assets/394197d4-2fc0-4963-90e5-349a7ad39e74)
+
 ## TODO
 
 - mix Magic Move with line highlighting

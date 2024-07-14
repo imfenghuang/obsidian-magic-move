@@ -17,7 +17,7 @@ export function normalizeRangeStr(rangeStr = '') {
 
 export const reCodeBlock =
 	/^```([\w'-]+)(?:\s*\{([\w*,|-]+)\}\s*?(\{[^}]*\})?([^\r\n]*))?\r?\n(\S[\s\S]*?)^```$/gm
-	
+
 export const reMagicMoveBlock =
 	/^````magic-move(?: *(\{[^}]*\})?([^\n]*))?\n([\s\S]+?)^````$/gm
 

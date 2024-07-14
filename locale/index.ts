@@ -16,8 +16,7 @@ const localeKey = Object.keys(localeMap)
 export type LocaleType = typeof locale
 
 export function setLanguage(newLang: LangType | string | null) {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	if (!localeKey.includes(newLang as any)) newLang = 'en'
+	if (newLang === null || !localeKey.includes(newLang)) newLang = 'en'
 	lang = newLang as LangType
 	locale = localeMap[lang || 'en']
 	return locale

@@ -245,7 +245,7 @@ const childComponent = {
 				{
 					class: 'magic-move-navigation-wrap',
 				},
-				[
+				matches.length > 1 ? [
 					h(
 						'button',
 						{
@@ -264,7 +264,7 @@ const childComponent = {
 						},
 						'${this.$t.navigation.next}'
 					),
-				]
+				] : null
 			),
 		]
 	},
@@ -387,7 +387,7 @@ $omm?.$observerIns?.observe(div)
 	}
 
 	observer() {
-		;(
+		; (
 			window?.ObsidianMagicMove?.$observerIns as IntersectionObserver
 		)?.disconnect?.()
 

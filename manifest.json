@@ -3,7 +3,7 @@
 	"name": "Magic Move",
 	"version": "0.0.1",
 	"minAppVersion": "0.15.0",
-	"description": "Magic Move is a plugin for animating code blocks.",
+	"description": "Animating code blocks with markdown and code syntax highlighting with beautiful themes.",
 	"author": "imfenghuang",
 	"isDesktopOnly": true
 }

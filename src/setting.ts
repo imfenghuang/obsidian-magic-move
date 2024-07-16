@@ -1,6 +1,6 @@
 import { App, PluginSettingTab, Component, Setting } from 'obsidian'
 import { defaultThemes } from './config'
-import ObsidianMagicMovePlugin from './main'
+import MagicMovePlugin from './main'
 import { getLocal } from './locale'
 import type { LocaleType } from './locale'
 
@@ -11,7 +11,7 @@ export class SettingTab extends PluginSettingTab {
 
 	constructor(
 		app: App,
-		public plugin: ObsidianMagicMovePlugin
+		public plugin: MagicMovePlugin
 	) {
 		super(app, plugin)
 		this.component = new Component()

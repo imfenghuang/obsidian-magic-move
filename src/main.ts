@@ -28,7 +28,7 @@ import type { Settings } from './config'
 type EmptyObject = Record<string, unknown>
 // type CacheMap = Map<string, string[]>;
 
-type ObsidianMagicMoveType = {
+type MagicMoveType = {
 	// $cache: CacheMap;
 	$vue: {
 		createApp: typeof createApp
@@ -62,7 +62,7 @@ type ObsidianMagicMoveType = {
 
 declare global {
 	interface Window {
-		ObsidianMagicMove?: ObsidianMagicMoveType
+		MagicMove?: MagicMoveType
 	}
 }
 
@@ -71,7 +71,7 @@ interface HTMLElementExtend extends HTMLElement {
 	$insertCallback?: () => void
 }
 
-export default class ObsidianMagicMovePlugin extends Plugin {
+export default class MagicMovePlugin extends Plugin {
 	settings: Ref<Settings>
 	settingTab: SettingTab
 	$t: LocaleType
@@ -126,7 +126,7 @@ export default class ObsidianMagicMovePlugin extends Plugin {
 
 		codeElm.classList.add(queryClass)
 
-		window?.ObsidianMagicMove?.$observerIns?.observe?.(codeElm)
+		window?.MagicMove?.$observerIns?.observe?.(codeElm)
 
 		codeElm['$insertCallback'] = () => {
 			if (codeElm.classList.contains('is-scripted')) {
@@ -134,7 +134,7 @@ export default class ObsidianMagicMovePlugin extends Plugin {
 			}
 
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			window!.ObsidianMagicMove!.$codeElements[queryClass] = codeElm
+			window!.MagicMove!.$codeElements[queryClass] = codeElm
 
 			const textContent = this.makeTextContent(
 				queryClass,
@@ -152,7 +152,7 @@ export default class ObsidianMagicMovePlugin extends Plugin {
 			script.classList.add(queryScriptClass)
 			script.textContent = textContent
 
-			window?.ObsidianMagicMove?.$observerIns?.unobserve?.(codeElm)
+			window?.MagicMove?.$observerIns?.unobserve?.(codeElm)
 			codeElm.classList.add('is-scripted')
 		}
 	}
@@ -170,7 +170,7 @@ export default class ObsidianMagicMovePlugin extends Plugin {
 
 	makeTextContent(queryClass: string, mountClass: string, tempClass: string) {
 		return `
-const $omm = window.ObsidianMagicMove
+const $omm = window.MagicMove
 const $app = $omm.$app
 const el = $omm.$codeElements['${queryClass}']
 
@@ -320,9 +320,9 @@ $omm?.$observerIns?.observe(div)
 
 		this.scriptWrap.remove()
 
-		window?.ObsidianMagicMove?.$observerIns?.disconnect?.()
-		window?.ObsidianMagicMove?.$highlighterSetting?.$highlighter?.dispose?.()
-		delete window['ObsidianMagicMove']
+		window?.MagicMove?.$observerIns?.disconnect?.()
+		window?.MagicMove?.$highlighterSetting?.$highlighter?.dispose?.()
+		delete window['MagicMove']
 
 		console.log('unload Magic Move plugin')
 	}
@@ -345,7 +345,7 @@ $omm?.$observerIns?.observe(div)
 			langs: Object.keys(bundledLanguages),
 		})
 
-		window.ObsidianMagicMove = {
+		window.MagicMove = {
 			$app: this.app,
 			$codeElements: {},
 			$observerIns: null,
@@ -392,7 +392,7 @@ $omm?.$observerIns?.observe(div)
 
 	observer() {
 		;(
-			window?.ObsidianMagicMove?.$observerIns as IntersectionObserver
+			window?.MagicMove?.$observerIns as IntersectionObserver
 		)?.disconnect?.()
 
 		const options = {
@@ -415,7 +415,7 @@ $omm?.$observerIns?.observe(div)
 		}
 
 		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-		window!.ObsidianMagicMove!.$observerIns = new IntersectionObserver(
+		window!.MagicMove!.$observerIns = new IntersectionObserver(
 			callback,
 			options
 		)
@@ -430,7 +430,7 @@ $omm?.$observerIns?.observe(div)
 			Object.assign({}, defaultSettings, await this.loadData())
 		)
 		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-		window!.ObsidianMagicMove!.$setting = this.settings
+		window!.MagicMove!.$setting = this.settings
 	}
 
 	async saveSettings() {

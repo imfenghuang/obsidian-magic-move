@@ -6,6 +6,7 @@ Obsidian Magic Move is a Obsidian (https://obsidian.md) plugin for animating cod
 
 ## Usage
 
+- working in `Reading Mode`
 - use **\`\`\`\`magic-move** to wrap multiple code blocks
 - code block syntax is the same as you know
 - supprt code highlighting
@@ -44,3 +45,4 @@ You can set the `duration`, `stagger`, `lineNumbers` animation option and select
 ## TODO
 
 - mix Magic Move with line highlighting
+- living preview

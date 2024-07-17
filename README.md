@@ -4,6 +4,22 @@ Obsidian Magic Move is a Obsidian (https://obsidian.md) plugin for animating cod
 
 ![OMM Gif](https://github.com/user-attachments/assets/7ceb9c02-2fd5-43a7-b05d-2ec3209510ff)
 
+## Install
+
+### Method 1:
+
+1. Open Settings > community plugins
+2. Turn off `Safe mode`
+3. Click `Browse` button to browse plugins and search for `Magic Move`, or open this link `obsidian://show-plugin?id=magic-move` in your browser
+4. Click `Install` button
+5. After installed, go back community plugins window, and activate the newly installed plugin below installed plugins list
+
+### Method 2:
+
+1. Download the [latest release](https://github.com/imfenghuang/obsidian-magic-move/releases)
+2. Extract `obsidian-magic-move` folder from the zip to your vault's plugins folder `<vault>/.obsidian/plugins/` (Note: `.obsidian` folder may be hidden, you need to show it firstly)
+3. Open Settings > community plugins, reload and activate the plugin below installed plugins list
+
 ## Usage
 
 - working in `Reading Mode`

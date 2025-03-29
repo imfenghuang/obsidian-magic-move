@@ -102,8 +102,10 @@ export default class MagicMovePlugin extends Plugin {
 	}
 
 	async readingMode(codeBlockElement: HTMLElement) {
+		const codeLangs = ['magic-move', 'markdown\\:magic-move']
+		const selectors = codeLangs.map((lang) => `pre > code.language-${lang}`)
 		const codeElm: HTMLElementExtend | null =
-			codeBlockElement.querySelector('pre > code.language-magic-move')
+			codeBlockElement.querySelector(selectors.join())
 
 		if (!codeElm) return
 

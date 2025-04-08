@@ -23,12 +23,13 @@ Obsidian Magic Move is a Obsidian (https://obsidian.md) plugin for animating cod
 ## Usage
 
 - working in `Reading Mode`
-- use **\`\`\`\`magic-move** to wrap multiple code blocks
+- use **~~~magic-move** to wrap multiple code blocks
+- or **~~~markdown:magic-move** for syntax highlighting in editing mode
 - code block syntax is the same as you know
 - support code highlighting
 
-<pre>
-````magic-move
+````
+~~~markdown:magic-move
 ```vue
 import { defineComponent } from 'vue'
 
@@ -49,8 +50,8 @@ import { ref, computed } from 'vue'
 const count = ref(1)
 const double = computed(() => count.value * 2)
 ```
+~~~
 ````
-</pre>
 
 ## Settings
 

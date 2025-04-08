@@ -78,7 +78,8 @@
 }
 
 /* hidden class */
-.language-magic-move {
+.language-magic-move,
+.language-markdown\:magic-move {
 	display: block !important;
 	padding: 0 !important;
 	min-height: 0 !important;
